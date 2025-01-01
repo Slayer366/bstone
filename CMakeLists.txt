@@ -1,36 +1,32 @@
-cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
-project(bstone_solution VERSION 1.0.2 LANGUAGES NONE)
+#[[
+BStone: A Source port of
+Blake Stone: Aliens of Gold and Blake Stone: Planet Strike
 
-message(STATUS "[bstone_solution] v${PROJECT_VERSION}")
+Copyright (c) 1992-2013 Apogee Entertainment, LLC
+Copyright (c) 2013-2021 Boris I. Bendovsky (bibendovsky@hotmail.com)
 
-option(BSTONE_USE_STATIC_LINKING "Link build statically." OFF)
-message(STATUS "[bstone_solution] Static linking: ${BSTONE_USE_STATIC_LINKING}")
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
 
-option(BSTONE_TESTS "Build tests." OFF)
-message(STATUS "[bstone_solution] Build tests: ${BSTONE_TESTS}")
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-option(BSTONE_TRIM_FILE_PATHS_IN_EXE "Trim file names on the left in the executable." OFF)
-message(STATUS "[bstone_solution] Trim file names in the executable: ${BSTONE_TRIM_FILE_PATHS_IN_EXE}")
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the
+Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+]]
 
-option(BSTONE_NO_ASSERT "Disable assertion." OFF)
-message(STATUS "[bstone_solution] Disable assertion: ${BSTONE_NO_ASSERT}")
 
-option(BSTONE_INTERNAL_SDL2 "Use bundled SDL2 source code." OFF)
-message(STATUS "[bstone_solution] Internal SDL2: ${BSTONE_INTERNAL_SDL2}")
+cmake_minimum_required(VERSION 3.4.0 FATAL_ERROR)
+project(bstone_solution VERSION 1.0.0 LANGUAGES NONE)
+
 
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
-if ("${BSTONE_CI_GIT_HASH}" STREQUAL "")
-	include(GetGitHeadHash)
 
-	get_git_hash(${CMAKE_SOURCE_DIR} BSTONE_GIT_HASH)
-	message(STATUS "[bstone_solution] Source Git hash: ${BSTONE_GIT_HASH}")
-else ()
-	message(STATUS "[bstone_solution] CI Git hash: ${BSTONE_CI_GIT_HASH}")
-	set(BSTONE_GIT_HASH "${BSTONE_CI_GIT_HASH}")
-endif ()
-
-string(SUBSTRING "${BSTONE_GIT_HASH}" 0 8 BSTONE_GIT_HASH_SHORT)
-message(STATUS "[bstone_solution] Short Git hash: ${BSTONE_GIT_HASH_SHORT}")
-
-add_subdirectory(src)
+add_subdirectory (src)

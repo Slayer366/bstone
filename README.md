@@ -9,42 +9,41 @@ Contents
 
 1. Disclaimer
 2. Overview  
-3. Known issues  
-   3.1 Windows
-4. Installation  
-   4.1 Windows (GOG / Steam)  
-   4.2 Windows (Generic)  
-   4.3 Addons
-5. Required assets
-6. Profile
-7. Audio  
-   7.1 OpenAL driver
-8. External textures  
-   8.1 Aspect ratio  
-   8.2 Transparency  
-   8.3 Naming conventions  
-   8.4 Supported file formats  
-   8.5 File format search order
-9. Taking screenshots
-10. Compiling  
-   10.1. Generic instructions for Linux-based system or build environment (MinGW)
-11. Command-line options
-12. Cheat key
-13. Debug keys
-14. Third party use
-15. Credits
-16. Links  
-    16.1. Essentials  
-    16.2. General  
-    16.3. Add-ons for Aliens Of Gold (full)  
-    16.4. Add-ons for Planet Strike
+   2.1. Overview (PS Vita)
+3. Installation  
+   3.1. Windows (GOG / Steam)  
+   3.2. Windows (Generic)  
+   3.3. Addons
+4. Required assets
+5. Profile
+6. Audio  
+   6.1 OpenAL driver
+7. External textures  
+   7.1 Aspect ratio  
+   7.2 Transparency  
+   7.3 Naming conventions  
+   7.4 Supported file formats  
+   7.5 File format search order
+8. Taking screenshots
+9. Compiling  
+   9.1. Generic instructions for Linux-based system or build environment (MinGW)
+10. Command-line options
+11. Cheat key
+12. Debug keys
+13. Third party use
+14. Credits
+15. Links  
+    15.1. Essentials  
+    15.2. General  
+    15.3. Add-ons for Aliens Of Gold (full)  
+    15.4. Add-ons for Planet Strike
 
 
 1 - Disclaimer
 ==============
 
 Copyright (c) 1992-2013 Apogee Entertainment, LLC  
-Copyright (c) 2013-2024 Boris I. Bendovsky (<bibendovsky@hotmail.com>)
+Copyright (c) 2013-2021 Boris I. Bendovsky (<bibendovsky@hotmail.com>)
 
 This program is free software; you can redistribute it and/or  
 modify it under the terms of the GNU General Public License  
@@ -83,47 +82,42 @@ Supported games:
 * Planet Strike (v1.0/v1.1)
 
 
-3 - Known issues
+2.1 - Overview (PS Vita)
+========================
+See [README-PSVITA.md](README-PSVITA.md) for details about the source port on PS Vita.
+
+
+3 - Installation
 ================
 
-3.1 - Windows
-=============
 
-*Problem:* OpenAL runtime v1.9.9 causes a (crash)[http://github.com/bibendovsky/bstone/issues/375] in non-MinGW-W64 build.  
-*Solution:* Update the (OpenAL runtime)[http://openal.org/].
-
-
-4 - Installation
-================
-
-- Download the latest release.
-https://github.com/bibendovsky/bstone/releases/latest
-
-4.1 - Windows (GOG / Steam)
+3.1 - Windows (GOG / Steam)
 ===========================
 
+- Download the latest release.
 - Extract it into convinient for you directory.
 - Run `bstone.exe` to play.
 
 
-4.2 - Windows (generic)
+3.2 - Windows (generic)
 =======================
 
+- Download the latest release.
 - Extract it into the directory with game files (*.BS1 / *.BS6 / *.VSI).
 - Run `bstone.exe` to play.
 
 
-4.3 - Addons
+3.3 - Addons
 ============
 
 - Put addon's files into separate directory. Do not overwrite any original files!
 - Run with command line option `--mod_dir` to point to this directory (i.e. `bstone.exe --mod_dir addon1`).
 
 
-5 - Required assets
+4 - Required assets
 ===================
 
-Since all titles except shareware are not free you have to own a copy of the game in order to play.
+Since all titles are not free (except shareware) you have to own a copy of the game in order to play.
 
 Required files for each game:
 
@@ -142,149 +136,6 @@ Required files for each game:
 | VGAHEAD.BS1  | VGAHEAD.BS6  | VGAHEAD.VSI  |
 | VSWAP.BS1    | VSWAP.BS6    | VSWAP.VSI    |
 
-[SHA-1](https://en.wikipedia.org/wiki/SHA-1) for AOG SW v1.0:
-
-|   File name  |                  SHA-1                   |
-|--------------|------------------------------------------|
-| AUDIOHED.BS1 | 0c3de403b524107809fa9308b730d60e8e41ba93 |
-| AUDIOT.BS1   | 3d4e8b62aa4683671027513ad9720f76f176ba5b |
-| IANIM.BS1    | ba1fa5b0bc34f148deffb4977a3cd1e718e91bbd |
-| MAPHEAD.BS1  | 55b9eb9ed555b0f249c2cefd54ecc3f511bfcd55 |
-| MAPTEMP.BS1  | 293464e7143ff7e6faf5f5b20799e76a394d65bf |
-| SANIM.BS1    | 22bf818465da0f32eef9611de936cba9966b14aa |
-| VGADICT.BS1  | b54d48d35d095e27a3c9130cfa59ed9c4f05abe7 |
-| VGAGRAPH.BS1 | d1fa19131281d30787125f946881652be876f57a |
-| VGAHEAD.BS1  | cc44c362e9e2c9f7b9fb2e4ba31331dde42a1e96 |
-| VSWAP.BS1    | 37412ca9139562fc31330d72470822de4d9ceb4a |
-
-[SHA-1](https://en.wikipedia.org/wiki/SHA-1) for AOG SW v2.0:
-
-|   File name  |                  SHA-1                   |
-|--------------|------------------------------------------|
-| AUDIOHED.BS1 | 0c3de403b524107809fa9308b730d60e8e41ba93 |
-| AUDIOT.BS1   | 3d4e8b62aa4683671027513ad9720f76f176ba5b |
-| IANIM.BS1    | ba1fa5b0bc34f148deffb4977a3cd1e718e91bbd |
-| MAPHEAD.BS1  | 04a8e4e7c360f6033dc70f7b09edbc4a6447e462 |
-| MAPTEMP.BS1  | bbb3cd6ab3e742eada427862504eba06437036d0 |
-| SANIM.BS1    | 22bf818465da0f32eef9611de936cba9966b14aa |
-| VGADICT.BS1  | 058fe0b59c7aa020bf4e7509103892d4c7459aa6 |
-| VGAGRAPH.BS1 | e14b6172b6ab7568d3736f087f07a0df5eac5dad |
-| VGAHEAD.BS1  | 6c0e273df7fd3940c038fc20a5bdfb81cd50e7ef |
-| VSWAP.BS1    | dbde907ba1110bef445d6daae283c4520d6951b4 |
-
-[SHA-1](https://en.wikipedia.org/wiki/SHA-1) for AOG SW v2.1:
-
-|   File name  |                  SHA-1                   |
-|--------------|------------------------------------------|
-| AUDIOHED.BS1 | e2c101f9fd4bc7e22ddbfa3f019c9303877de4e2 |
-| AUDIOT.BS1   | b79e7afcb4e4b29e59660ec261f72ff1ab4d3a25 |
-| IANIM.BS1    | ba1fa5b0bc34f148deffb4977a3cd1e718e91bbd |
-| MAPHEAD.BS1  | 04a8e4e7c360f6033dc70f7b09edbc4a6447e462 |
-| MAPTEMP.BS1  | bbb3cd6ab3e742eada427862504eba06437036d0 |
-| SANIM.BS1    | 22bf818465da0f32eef9611de936cba9966b14aa |
-| VGADICT.BS1  | ed1ab61ad2529e046f966d9c1627508f76693ef8 |
-| VGAGRAPH.BS1 | b59cbe3793b4612b06254ece48bf8e961ab6f528 |
-| VGAHEAD.BS1  | 0635a4a2b823eef2904ed1d590d98362fb16621d |
-| VSWAP.BS1    | dbde907ba1110bef445d6daae283c4520d6951b4 |
-
-[SHA-1](https://en.wikipedia.org/wiki/SHA-1) for AOG SW v3.0:
-
-|   File name  |                  SHA-1                   |
-|--------------|------------------------------------------|
-| AUDIOHED.BS1 | e2c101f9fd4bc7e22ddbfa3f019c9303877de4e2 |
-| AUDIOT.BS1   | b79e7afcb4e4b29e59660ec261f72ff1ab4d3a25 |
-| IANIM.BS1    | ba1fa5b0bc34f148deffb4977a3cd1e718e91bbd |
-| MAPHEAD.BS1  | 04a8e4e7c360f6033dc70f7b09edbc4a6447e462 |
-| MAPTEMP.BS1  | bbb3cd6ab3e742eada427862504eba06437036d0 |
-| SANIM.BS1    | 22bf818465da0f32eef9611de936cba9966b14aa |
-| VGADICT.BS1  | 537676ddcafeee415c22bb9d00097b25bc7e13c5 |
-| VGAGRAPH.BS1 | 9f9f4c40c9637af472ce5e1a360e51364c3a418a |
-| VGAHEAD.BS1  | e7fb8f241b8fa94739c3bd09ea05c1afc7bbfc95 |
-| VSWAP.BS1    | dbde907ba1110bef445d6daae283c4520d6951b4 |
-
-[SHA-1](https://en.wikipedia.org/wiki/SHA-1) for AOG v1.0:
-
-|   File name  |                  SHA-1                   |
-|--------------|------------------------------------------|
-| AUDIOHED.BS6 | e2c101f9fd4bc7e22ddbfa3f019c9303877de4e2 |
-| AUDIOT.BS6   | b79e7afcb4e4b29e59660ec261f72ff1ab4d3a25 |
-| EANIM.BS6    | af5af59ad7ed17517d87b3ece3c0cac23ade535b |
-| GANIM.BS6    | 9b2418a1a1f34abdcf6fcd9ed3344a49912c9b5e |
-| IANIM.BS6    | ba1fa5b0bc34f148deffb4977a3cd1e718e91bbd |
-| MAPHEAD.BS6  | 6f19a144d8985e90f096fc1c67ade58e9051235c |
-| MAPTEMP.BS6  | 4d00c5f5c843f99a266bd938648192a6eff17b5a |
-| SANIM.BS6    | 22bf818465da0f32eef9611de936cba9966b14aa |
-| VGADICT.BS6  | d4f81ace1701a7338d43ce07723c2adaafdc837c |
-| VGAGRAPH.BS6 | 02dc27d4810e3ffa26540b310eac6091f5e16de0 |
-| VGAHEAD.BS6  | 639ec9e7a81ad83fc5b5c557cf4fc5fa28b9676b |
-| VSWAP.BS6    | 0a700732ccbc72f95318a6226a7e1ad78ac713bb |
-
-[SHA-1](https://en.wikipedia.org/wiki/SHA-1) for AOG v2.0:
-
-|   File name  |                  SHA-1                   |
-|--------------|------------------------------------------|
-| AUDIOHED.BS6 | e2c101f9fd4bc7e22ddbfa3f019c9303877de4e2 |
-| AUDIOT.BS6   | b79e7afcb4e4b29e59660ec261f72ff1ab4d3a25 |
-| EANIM.BS6    | af5af59ad7ed17517d87b3ece3c0cac23ade535b |
-| GANIM.BS6    | 9b2418a1a1f34abdcf6fcd9ed3344a49912c9b5e |
-| IANIM.BS6    | ba1fa5b0bc34f148deffb4977a3cd1e718e91bbd |
-| MAPHEAD.BS6  | 028f624e150f84ffc8336336cb0ecea0932cc22d |
-| MAPTEMP.BS6  | 8b48e7eb859382a4c84948c5a62899194288e853 |
-| SANIM.BS6    | 22bf818465da0f32eef9611de936cba9966b14aa |
-| VGADICT.BS6  | e83b690836c9edf9ef60f6189b8384fb2319b735 |
-| VGAGRAPH.BS6 | 67a679e3b107db8685ba5ff1643a38f9291b00bf |
-| VGAHEAD.BS6  | 48b18caa86151610957b64b207cf2a2977ef7d57 |
-| VSWAP.BS6    | 6fcc6e007b02b2e55892cfa7acfd42966ef9c9fb |
-
-[SHA-1](https://en.wikipedia.org/wiki/SHA-1) for AOG v2.1:
-
-|   File name  |                  SHA-1                   |
-|--------------|------------------------------------------|
-| AUDIOHED.BS6 | e2c101f9fd4bc7e22ddbfa3f019c9303877de4e2 |
-| AUDIOT.BS6   | b79e7afcb4e4b29e59660ec261f72ff1ab4d3a25 |
-| EANIM.BS6    | af5af59ad7ed17517d87b3ece3c0cac23ade535b |
-| GANIM.BS6    | 9b2418a1a1f34abdcf6fcd9ed3344a49912c9b5e |
-| IANIM.BS6    | ba1fa5b0bc34f148deffb4977a3cd1e718e91bbd |
-| MAPHEAD.BS6  | 028f624e150f84ffc8336336cb0ecea0932cc22d |
-| MAPTEMP.BS6  | 8b48e7eb859382a4c84948c5a62899194288e853 |
-| SANIM.BS6    | 22bf818465da0f32eef9611de936cba9966b14aa |
-| VGADICT.BS6  | e4ae3ef9a3ac158a832092b7b5487227337c6f13 |
-| VGAGRAPH.BS6 | 6868e6cc4f8cb9160a218c5bce680a11f64c675a |
-| VGAHEAD.BS6  | 1a3864cd12de4b8fd6be023b73d2d79e91b9018d |
-| VSWAP.BS6    | 6fcc6e007b02b2e55892cfa7acfd42966ef9c9fb |
-
-[SHA-1](https://en.wikipedia.org/wiki/SHA-1) for AOG v3.0:
-
-|   File name  |                  SHA-1                   |
-|--------------|------------------------------------------|
-| AUDIOHED.BS6 | e2c101f9fd4bc7e22ddbfa3f019c9303877de4e2 |
-| AUDIOT.BS6   | b79e7afcb4e4b29e59660ec261f72ff1ab4d3a25 |
-| EANIM.BS6    | af5af59ad7ed17517d87b3ece3c0cac23ade535b |
-| GANIM.BS6    | 9b2418a1a1f34abdcf6fcd9ed3344a49912c9b5e |
-| IANIM.BS6    | ba1fa5b0bc34f148deffb4977a3cd1e718e91bbd |
-| MAPHEAD.BS6  | 028f624e150f84ffc8336336cb0ecea0932cc22d |
-| MAPTEMP.BS6  | 8b48e7eb859382a4c84948c5a62899194288e853 |
-| SANIM.BS6    | 22bf818465da0f32eef9611de936cba9966b14aa |
-| VGADICT.BS6  | 60da35e506d57753f83cca5f232a76dd1cf074ba |
-| VGAGRAPH.BS6 | 001037fafdff124befb5437c563d0b9c613b3c00 |
-| VGAHEAD.BS6  | ff165ca5924d738853587a7e4ab1cd239e10e359 |
-| VSWAP.BS6    | 6fcc6e007b02b2e55892cfa7acfd42966ef9c9fb |
-
-[SHA-1](https://en.wikipedia.org/wiki/SHA-1) for PS:
-
-|   File name  |                  SHA-1                   |
-|--------------|------------------------------------------|
-| AUDIOHED.VSI | 2ed9a587926b2b455f8176788f595d03f6359171 |
-| AUDIOT.VSI   | ecac8a800c5d021c8b68d170066c8859df9bd79a |
-| EANIM.VSI    | b668330e56ceb069c1b972cefddd8a3d618a14af |
-| IANIM.VSI    | ba1fa5b0bc34f148deffb4977a3cd1e718e91bbd |
-| MAPHEAD.VSI  | c3fb0a9b81e0240d12c952fe5b57b78c1108aa48 |
-| MAPTEMP.VSI  | acd03031d526eeaee64072518adf6814f96e2a37 |
-| VGADICT.VSI  | 061692d166f68d7e0b81568725439078cc728f33 |
-| VGAGRAPH.VSI | e619a3e6245f79888da5436df138d63204d2caba |
-| VGAHEAD.VSI  | ad5fed9de5d1d82145df3ff2286e4bc62cb80e2a |
-| VSWAP.VSI    | 4113ce83c42e69dc5cb20de79f41971a100f876e |
-
 Legend:
 * AOG SW - Aliens Of Gold (shareware)
 * AOG - Aliens Of Gold (full)
@@ -293,6 +144,7 @@ Legend:
 Both all lowercase and all uppercase (default) file names are supported.
 
 The port auto-detect assets of some digital distribution services.
+Note that option `--data_dir` disables auto-detection.
 
 Supported services:
 
@@ -303,7 +155,7 @@ Supported services:
   Windows only.  
 
 
-6 - Profile
+5 - Profile
 ===========
 
 Configuration file, saved game files, etc. are stored in user's profile. The path to those files depends on platform. To override the path use `--profile_dir` option.
@@ -325,14 +177,14 @@ Where `<game>` is:
 * `ps` - Planet Strike
 
 
-7 - Audio
+6 - Audio
 =========
 
 Provides default stereo driver and optional 3D one.  
 Use option `GAME OPTIONS - SOUND - DRIVER` to change the driver.
 
 
-7.1 - OpenAL driver
+6.1 - OpenAL driver
 ===================
 
 Supports any OpenAL v1.1 compatible implementation (Creative Labs, OpenAL Soft, etc.).  
@@ -344,7 +196,7 @@ The port uses default device name.
 Set configuration string `snd_oal_device_name` to open specific device.
 
 
-8 - External textures
+7 - External textures
 =====================
 
 Allows to replace stocked textures with custom ones.
@@ -355,7 +207,7 @@ Option `GAME OPTIONS - VIDEO - TEXTURING - EXTERNAL TEXTURES` enables or disable
 WARNING Changing the option may take some time if the dimensions of loaded textures are high.
 
 
-8.1 - Aspect ratio
+7.1 - Aspect ratio
 ==================
 
 Both vanilla games ran only in a 320x200 video mode. On monitors, widely available at the time, this video mode took up the entire screen, which had a 4:3 physical aspect ratio. This meant that the 320x200 display, with a 16:10 logical ratio, was stretched vertically - each pixel was 20% taller than it was wide.
@@ -372,13 +224,13 @@ TLDR
 - Design flooring or ceiling image in 1:1 aspect ratio (i.e. 1280x1280), and export for the game in 1:1 aspect ratio (i.e. 1024x1024) too.
 
 
-8.2 - Transparency
+7.2 - Transparency
 ==================
 
 Images with alpha channel should be exported as [*premultiplied*](http://en.wikipedia.org/wiki/Alpha_compositing).
 
 
-8.3 - Naming conventions
+7.3 - Naming conventions
 ========================
 
 All letters *should be* lower case.
@@ -398,21 +250,21 @@ Examples:
 - `aog/wall_00000088.png` - "Aliens Of Gold" turned on south-north switch wall in PNG format.
 
 
-8.4 - Supported file formats
+7.4 - Supported file formats
 ============================
 
 - [Windows BMP](http://wikipedia.org/wiki/BMP_file_format)
 - [PNG](http://wikipedia.org/wiki/Portable_Network_Graphics)
 
 
-8.5 -  File format search order
+7.5 -  File format search order
 ===============================
 
 1. PNG
 2. BMP
 
 
-9 - Taking screenshots
+8 - Taking screenshots
 ======================
 
 Default key is <kbd>F5</kbd>.  
@@ -423,7 +275,7 @@ Taken screenshots are placed in the profile directory.
 Supported format: [PNG](http://wikipedia.org/wiki/Portable_Network_Graphics)
 
 
-10 - Compiling
+9 - Compiling
 =============
 
 Minimum requirements:
@@ -433,7 +285,7 @@ Minimum requirements:
   * [Clang 3.4](http://clang.llvm.org)
   * [MSVC (VS 2017 15.0)](http://visualstudio.microsoft.com)
 * [CMake 3.4.0](http://cmake.org/)
-* [SDL v2.0.4](http://libsdl.org/)  
+* [SDL v2.0.4](http://libsdl.org/)
 
 CMake variables:
 * `CMAKE_BUILD_TYPE`  
@@ -457,26 +309,15 @@ CMake variables:
 * `BSTONE_MORE_COMPILER_WARNINGS`  
   Enables more compilation warnings.
 
-* `BSTONE_TESTS`  
-  Builds and installs an application to test internal facility.  
-  Default value: OFF
-
-* `BSTONE_TRIM_FILE_PATHS_IN_EXE`  
-  Makes file paths in the executable relative to the source code directory.  
-  Default value: OFF
-
 * `SDL2W_SDL2_DIR`  
   Defines directory with SDL2 CMake configuration file or with official SDL2 development Windows build.
 
-* `BSTONE_INTERNAL_SDL2`  
-  Enables bundled SDL2 source code.  
-  Default value: OFF
 
 Notes:
 * Use `ON` value to enable option and value `OFF` to disable option.
 
 
-10.1 - Generic instructions for Linux-based system or build environment (MinGW)
+9.1 - Generic instructions for Linux-based system or build environment (MinGW)
 =============================================================================
 
 1. Install minimum required software described above.
@@ -486,7 +327,7 @@ Notes:
 3. Make directory `~/bstone-x.y.z/build` current.
 
 4. Generate Makefile.  
-`cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=~/bstone-x.y.z/build/install ..`
+`cmake ../.. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~/bstone-x.y.z/build/install`
 
 5. Build and install:
 `cmake --build . --target install`
@@ -494,7 +335,7 @@ Notes:
 6. On success you will find executable and text files in the directory `~/bstone-x.y.z/build/install`.
 
 
-11 - Command-line options
+10 - Command-line options
 ========================
 
 * `--version`  
@@ -529,12 +370,6 @@ Notes:
 * `--profile_dir dir`  
   Overrides default directory of the game's profile files.
 
-* `--log_sync`  
-  Logs messages synchronously (slow, for debugging).
-
-* `--log_flush_every_message`  
-  Flushes the log after each message (slow, for debugging).
-
 * `--vid_renderer value`  
   Select a renderer.  
   Values:
@@ -546,28 +381,33 @@ Notes:
 
   Default: `auto_detect`
 
-* `--vid_width width`  
-  Specifies window width.  
+* `--vid_is_windowed value`  
+  Starts up the game in windowed mode or in fake fullscreen otherwise.  
+  Values: `0` (fake fullscreen) or `1` (windowed)  
+  Default: `1`
+
+* `--vid_windowed_width width`  
+  Specifies window width for windowed mode.  
   Minimum width: `320`  
   Default width: `640`
 
-* `--vid_height height`  
-  Specifies window height.  
+* `--vid_windowed_height height`  
+  Specifies window height for windowed mode.  
   Minimum height: `240`  
   Default height: `480`
 
-* `--vid_x offset`  
+* `--vid_windowed_x offset`  
   Sets a horizontal offset from the left side of the desktop screen.  
   Applicable for positionable window only.  
   Default: `0`
 
-* `--vid_y offset`  
+* `--vid_windowed_y offset`  
   Sets a vertical offset from the top side of the desktop screen.  
   Applicable for positionable window only.  
   Default: `0`
 
 * `--vid_is_positioned value`  
-  Centers a window on the desktop or moves it in the specified position.  
+  Centers a windowed window on the desktop or moves it in the specified position.  
   Values: `0` (centered) or `1` (positioned)  
   Default: `0`
 
@@ -624,7 +464,7 @@ Notes:
   Values: [`2`..`6`]  
   Default: `0`
 
-* `--vid_aa_type value`  
+* `--vid_aa_kind value`  
   Sets an anti-aliasing mode.  
   Applicable only for 3D-rendering.  
   Values: `none` or `msaa`  
@@ -646,11 +486,6 @@ Notes:
   Values: `0` (disable), `1` (enable).  
   Default: `0`
 
-* `--vid_check_r3_api_call_for_errors value`  
-  Toggles checking every 3D API call for errors.  
-  Values: `0` (disable), `1` (enable).  
-  Default: `0`
-
 * `--snd_is_disabled value`  
   Enables or disables audio subsystem.  
   Values: `0` (disable) or `1` (enable)  
@@ -666,11 +501,23 @@ Notes:
   Default: `40`  
   Minimum: `20`
 
+* `--snd_resampling_interpolation value`  
+  Specifies interpolation method for sample-rate conversion.  
+  PCM audio only.  
+  Values: `zoh` ([zero-order hold](http://wikipedia.org/wiki/Zero-order_hold)) or `linear`  
+  Default: `linear`
+
+* `--snd_resampling_lpf value`  
+  Toggles low-pass filter for sample-rate conversion.  
+  PCM audio only.  
+  Values: `0` (disable) or `1` (enable)  
+  Default: `1`
+
 * `--snd_driver value`  
   Specifies the audio driver to use.  
-  Values: `auto-detect`, `system` (system default), `openal` (OpenAL)  
+  Values: `auto-detect`, `2d_sdl` (2D SDL), `3d_openal` (3D OpenAL)  
   Default: `auto-detect`  
-  Auto-detect order: `openal`, `system`
+  Auto-detect order: `3d_openal`, `2d_sdl`
 
 * `--snd_oal_library value`  
   Specifies OpenAL driver's name.  
@@ -690,11 +537,6 @@ Notes:
   If enabled overrides AdLib / PC Speaker SFX audio chunk if such one is available in `AUDIOT.*` file.  
   Values: `0` (disable) or `1` (enable)  
   Default: `1`
-
-* `--snd_opl3_type value`  
-  Specifies OPL3 emulator type.  
-  Values: `dbopl` (DOSBox) or `nuked` (Nuked)  
-  Default: `dbopl`
 
 * `--calculate_hashes`  
   Calculates hashes (SHA-1) of all resource files and outputs them into the log.
@@ -725,22 +567,18 @@ Notes:
   Extracts text resources into existing directory `dir`.  
   Supported file format: TXT
 
-* `--extract_levels dir`  
-  Extracts level resources into existing directory `dir`.  
-  Supported file format: FLR (MapEdit)
-
 * `--extract_all dir`  
   Extracts all resources (walls, sprites, etc.) into existing directory `dir`.
 
 
-12 - Cheat key
+11 - Cheat key
 ==============
 
 <kbd>J</kbd> <kbd>A</kbd> <kbd>M</kbd> <kbd>Enter</kbd>  
 Press specified keys sequentially. Shows message "NOW you're jammin'!!", and gives to you all keys, all weapons and restores health to 100% but zeroes score points. Not available in shareware version.
 
 
-13 - Debug keys
+12 - Debug keys
 ===============
 
 Add option `--cheats` to enable these keys.
@@ -825,7 +663,7 @@ Add option `--cheats` to enable these keys.
   Dumps information into the log about remaining bonus items and enemies.
 
 
-14 - Third party use
+13 - Third party use
 ====================
 
 * [SDL (Simple DirectMedia Library)](http://libsdl.org/)  
@@ -835,21 +673,21 @@ Add option `--cheats` to enable these keys.
   See file `src/dosbox/COPYING` for license information.  
   Note: The port uses OPL emulation code only.
 
+* [GLM (OpenGL Mathematics)](http://glm.g-truc.net/)  
+  See file `src/lib/glm/copying.txt` for license information.
+
 * [OpenAL Soft](http://openal-soft.org/)  
-  See file `src/lib/openal_soft/COPYING` for license information.  
+  See file `src\lib\openal_soft\COPYING` for license information.  
   Note: The port uses public headers only.
 
 * [stb_image / stb_image_write](http://github.com/nothings/stb)  
-  See file `src/lib/stb/LICENSE` for license information.
+  See file `src\lib\stb\LICENSE` for license information.
 
 * [xBRZ](http://sourceforge.net/projects/xbrz/)  
   See directory `src/lib/xbrz` for license information (`License.txt`) and essential changes made for the port (`bstone_changelog.txt`).
 
-* [Nuked OPL3](http://github.com/nukeykt/Nuked-OPL3)  
-  See file `src/lib/nuked_opl3/LICENSE` for license information
 
-
-15 - Credits
+14 - Credits
 ============
 
 * [id Software](http://www.idsoftware.com/)  
@@ -870,18 +708,18 @@ Add option `--cheats` to enable these keys.
 * Various contributors for providing fixies, ideas, etc.
 
 
-16 - Links
+15 - Links
 ==========
 
 
-16.1 - Essentials
+15.1 - Essentials
 =================
 
 * [Home page](http://bibendovsky.github.io/bstone/)
 * [Precompiled binaries and their source code](http://github.com/bibendovsky/bstone/releases)
 
 
-16.1 - General
+15.1 - General
 ==============
 
 * [Blake Stone: Aliens Of Gold official site](http://legacy.3drealms.com/blake/index.html)
@@ -891,7 +729,7 @@ Add option `--cheats` to enable these keys.
 * [Repacked shareware Blake Stone: Aliens Of Gold (v3.0)](http://bibendovsky.github.io/bstone/files/official/repack/bs_aog_v3_0_sw.zip)
 
 
-16.2 - Add-ons for Aliens Of Gold (full)
+15.2 - Add-ons for Aliens Of Gold (full)
 ========================================
 
 * Add-on [BSE90](http://bibendovsky.github.io/bstone/files/community/aog/bse90.zip) by ack
@@ -899,7 +737,7 @@ Add option `--cheats` to enable these keys.
 * Ling's Blake Stone [Levels](http://bibendovsky.github.io/bstone/files/community/aog/lingstone.zip) by Ling Yan Li
 
 
-16.3 - Add-ons for Planet Strike
+15.3 - Add-ons for Planet Strike
 ================================
 
 * Add-on [BSE24](http://bibendovsky.github.io/bstone/files/community/ps/bse24.zip) by ack
